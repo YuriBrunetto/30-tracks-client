@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import queryString from 'query-string'
-import './App.css'
+
+// Components
+import Welcome from './components/Welcome'
 
 function App() {
-  const [state, setState] = useState({ loading: false, tracks: [] })
+  const [state, setState] = useState({
+    loading: false,
+    logged: false,
+    tracks: []
+  })
+  const { loading, tracks } = state
 
   useEffect(() => {
     let parsed = queryString.parse(window.location.search)
@@ -22,14 +29,17 @@ function App() {
       ).then(res =>
         res
           .json()
-          .then(data => setState({ tracks: data.items, loading: false }))
+          .then(data =>
+            setState({ tracks: data.items, loading: false, logged: true })
+          )
       )
     }
   }, [])
 
   return (
-    <div className="App">
-      <a href="http://localhost:8888/login">Sign in to Spotify</a>
+    <>
+      <Welcome />
+
       {state.loading ? (
         <h1>Loading...</h1>
       ) : (
@@ -39,7 +49,7 @@ function App() {
           </>
         ))
       )}
-    </div>
+    </>
   )
 }
 
