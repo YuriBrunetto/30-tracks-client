@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: 48px;
     font-weight: 900;
+
+    @media (max-width: 959px) {
+      font-size: 32px;
+    }
   }
 
   body {

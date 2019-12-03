@@ -8,10 +8,18 @@ export const HeaderWrapper = styled.header`
   max-width: 1300px;
   margin: 0 auto;
 
+  @media (max-width: 959px) {
+    flex-direction: column;
+  }
+
   .logo {
     color: var(--black);
     font-weight: 900;
     font-size: 20px;
+
+    @media (max-width: 959px) {
+      margin-bottom: 8px;
+    }
   }
 
   .user {

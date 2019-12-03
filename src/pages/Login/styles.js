@@ -41,9 +41,11 @@ export const LoginWrapper = styled.section`
     transition: 0.3s;
     will-change: box-shadow, letter-spacing;
 
-    &:hover {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      letter-spacing: 5px;
+    @media (min-width: 960px) {
+      &:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        letter-spacing: 5px;
+      }
     }
   }
 `

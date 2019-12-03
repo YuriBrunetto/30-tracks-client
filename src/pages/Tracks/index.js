@@ -76,7 +76,9 @@ function Tracks() {
 
             <TracksWrapper>
               {tracks &&
-                tracks.map((track, i) => <Track key={i} track={track} />)}
+                tracks.map((track, i) => (
+                  <Track key={i} i={i + 1} track={track} />
+                ))}
             </TracksWrapper>
           </ContentWrapper>
 
