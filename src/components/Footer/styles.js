@@ -5,7 +5,7 @@ export const FooterWrapper = styled.footer`
   justify-content: center;
   align-items: center;
   padding: 16px;
-  margin-top: 80px;
+  margin-top: 60px;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: bold;

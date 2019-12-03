@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import queryString from 'querystring'
+import queryString from 'query-string'
 
 // Components
 import Header from '../../components/Header'
@@ -11,9 +11,11 @@ import { ContentWrapper, TracksWrapper } from './styles'
 
 function Tracks() {
   const [state, setState] = useState({
+    accessToken: null,
     loading: false,
     logged: false,
-    tracks: []
+    tracks: [],
+    user: null
   })
   const { loading, tracks, logged } = state
 
@@ -43,15 +45,13 @@ function Tracks() {
 
   return (
     <>
-      <Header />
+      <Header accessToken={state.accessToken} />
 
       <ContentWrapper>
         <h1>Your monthly top 30 Tracks are</h1>
 
         <TracksWrapper>
-          {[...Array(30).keys()].map((track, i) => (
-            <Track key={i} track={track} />
-          ))}
+          {tracks && tracks.map((track, i) => <Track key={i} track={track} />)}
         </TracksWrapper>
       </ContentWrapper>
 
