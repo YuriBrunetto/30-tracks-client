@@ -5,6 +5,7 @@ import queryString from 'query-string'
 import Header from '../../components/Header'
 import Track from '../../components/Track'
 import Footer from '../../components/Footer'
+import Loading from '../../components/Loading'
 
 // Styles
 import { ContentWrapper, TracksWrapper } from './styles'
@@ -25,9 +26,9 @@ function Tracks() {
     let authorization = 'Bearer ' + accessToken
 
     if (accessToken) {
-      setState({ loading: true })
-
       async function fetchData() {
+        setState({ loading: true })
+
         try {
           let [tracks, user] = await Promise.all([
             fetch(
@@ -64,17 +65,24 @@ function Tracks() {
 
   return (
     <>
-      <Header user={user} />
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <Header user={user} />
 
-      <ContentWrapper>
-        <h1>Your monthly top 30 Tracks are</h1>
+          <ContentWrapper>
+            <h1>Your monthly top 30 Tracks are</h1>
 
-        <TracksWrapper>
-          {tracks && tracks.map((track, i) => <Track key={i} track={track} />)}
-        </TracksWrapper>
-      </ContentWrapper>
+            <TracksWrapper>
+              {tracks &&
+                tracks.map((track, i) => <Track key={i} track={track} />)}
+            </TracksWrapper>
+          </ContentWrapper>
 
-      <Footer />
+          <Footer />
+        </>
+      )}
     </>
   )
 }

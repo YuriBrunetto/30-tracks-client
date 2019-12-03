@@ -9,6 +9,7 @@ const Footer = () => (
     <a
       href="https://yuribrunetto.com.br"
       title="Created with 💚 by Yuri Brunetto"
+      target="_blank"
     >
       Yuri Brunetto
     </a>
