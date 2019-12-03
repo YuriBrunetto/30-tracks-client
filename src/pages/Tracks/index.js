@@ -3,6 +3,11 @@ import queryString from 'querystring'
 
 // Components
 import Header from '../../components/Header'
+import Track from '../../components/Track'
+import Footer from '../../components/Footer'
+
+// Styles
+import { ContentWrapper, TracksWrapper } from './styles'
 
 function Tracks() {
   const [state, setState] = useState({
@@ -39,6 +44,18 @@ function Tracks() {
   return (
     <>
       <Header />
+
+      <ContentWrapper>
+        <h1>Your monthly top 30 Tracks are</h1>
+
+        <TracksWrapper>
+          {[...Array(30).keys()].map((track, i) => (
+            <Track key={i} track={track} />
+          ))}
+        </TracksWrapper>
+      </ContentWrapper>
+
+      <Footer />
     </>
   )
 }

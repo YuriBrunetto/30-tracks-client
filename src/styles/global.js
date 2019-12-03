@@ -19,6 +19,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  h1 {
+    font-size: 48px;
+    font-weight: 900;
+  }
+
   body {
     background-color: #fff;
     color: var(--black);

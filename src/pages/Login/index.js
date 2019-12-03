@@ -12,10 +12,8 @@ const Login = () => (
       </h2>
 
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
-        sint unde itaque sit nulla neque! Magni, voluptatibus quasi, esse
-        inventore ullam architecto minus odit obcaecati impedit amet iste
-        consectetur consequuntur.
+        Simply login with your Spotify account and see a mosaic of your 30
+        favorites tracks of the <em>last 4 weeks</em>!
       </p>
     </header>
 

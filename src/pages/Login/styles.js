@@ -13,11 +13,6 @@ export const LoginWrapper = styled.section`
     max-width: 600px;
     padding: 0 16px;
 
-    h1 {
-      font-size: 48px;
-      font-weight: 900;
-    }
-
     h2 {
       font-weight: normal;
       font-style: italic;
