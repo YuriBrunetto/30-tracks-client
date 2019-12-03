@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import queryString from 'query-string'
+import React, { useState, useEffect } from 'react'
+import queryString from 'querystring'
 
 // Components
-import Welcome from './components/Welcome'
+import Header from '../../components/Header'
 
-function App() {
+function Tracks() {
   const [state, setState] = useState({
     loading: false,
     logged: false,
     tracks: []
   })
-  const { loading, tracks } = state
+  const { loading, tracks, logged } = state
 
   useEffect(() => {
     let parsed = queryString.parse(window.location.search)
@@ -38,19 +38,9 @@ function App() {
 
   return (
     <>
-      <Welcome />
-
-      {state.loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        state.tracks.map(({ album, name }, i) => (
-          <>
-            <img key={i} src={album.images[2].url} />,<p>{name}</p>
-          </>
-        ))
-      )}
+      <Header />
     </>
   )
 }
 
-export default App
+export default Tracks

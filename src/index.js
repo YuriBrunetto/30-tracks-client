@@ -1,16 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
+// Components
+import Login from './pages/Login'
+import Tracks from './pages/Tracks'
 import * as serviceWorker from './serviceWorker'
 
-import GlobalStyle from './globalStyle'
+// Styles
+import GlobalStyle from './styles/global'
 
 ReactDOM.render(
-  <>
+  <Router>
     <GlobalStyle />
-    <App />
-  </>,
+
+    <Switch>
+      <Route exact path="/" component={Login} />
+      <Route exact path="/tracks" component={Tracks} />
+    </Switch>
+  </Router>,
   document.getElementById('root')
 )
 

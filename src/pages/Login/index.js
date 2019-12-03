@@ -3,7 +3,7 @@ import React from 'react'
 // Styles
 import { LoginWrapper } from './styles'
 
-const Welcome = () => (
+const Login = () => (
   <LoginWrapper>
     <header>
       <h1>30 Tracks</h1>
@@ -29,4 +29,4 @@ const Welcome = () => (
   </LoginWrapper>
 )
 
-export default Welcome
+export default Login

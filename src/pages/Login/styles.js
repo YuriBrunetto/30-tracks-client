@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const LoginWrapper = styled.section`
   height: 100vh;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
