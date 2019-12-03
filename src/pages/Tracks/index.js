@@ -13,39 +13,58 @@ function Tracks() {
   const [state, setState] = useState({
     accessToken: null,
     loading: false,
-    logged: false,
     tracks: [],
-    user: null
+    user: null,
+    error: false
   })
-  const { loading, tracks, logged } = state
+  const { loading, tracks, user } = state
 
   useEffect(() => {
     let parsed = queryString.parse(window.location.search)
     let accessToken = parsed.access_token && parsed.access_token
+    let authorization = 'Bearer ' + accessToken
 
     if (accessToken) {
       setState({ loading: true })
 
-      fetch(
-        'https://api.spotify.com/v1/me/top/tracks?limit=30&time_range=short_term',
-        {
-          headers: {
-            Authorization: 'Bearer ' + accessToken
-          }
+      async function fetchData() {
+        try {
+          let [tracks, user] = await Promise.all([
+            fetch(
+              'https://api.spotify.com/v1/me/top/tracks?limit=30&time_range=short_term',
+              {
+                headers: {
+                  Authorization: authorization
+                }
+              }
+            ),
+            fetch('https://api.spotify.com/v1/me', {
+              headers: {
+                Authorization: authorization
+              }
+            })
+          ])
+
+          let tracksResponse = await tracks.json()
+          let userResponse = await user.json()
+
+          setState({
+            tracks: tracksResponse.items,
+            loading: false,
+            user: userResponse
+          })
+        } catch (e) {
+          setState({ loading: false, error: true })
         }
-      ).then(res =>
-        res
-          .json()
-          .then(data =>
-            setState({ tracks: data.items, loading: false, logged: true })
-          )
-      )
+      }
+
+      fetchData()
     }
   }, [])
 
   return (
     <>
-      <Header accessToken={state.accessToken} />
+      <Header user={user} />
 
       <ContentWrapper>
         <h1>Your monthly top 30 Tracks are</h1>

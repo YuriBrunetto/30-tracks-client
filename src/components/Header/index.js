@@ -4,22 +4,21 @@ import { Link } from 'react-router-dom'
 // Styles
 import { HeaderWrapper } from './styles'
 
-const Header = () => (
+const Header = props => (
   <HeaderWrapper>
     <Link to="/" className="logo" title="30 Tracks">
       30 Tracks
     </Link>
-    <div className="user">
-      <div className="avatar">
-        <img
-          src="https://tinyfac.es/data/avatars/AEF44435-B547-4B84-A2AE-887DFAEE6DDF-200w.jpeg"
-          alt="Yuri Brunetto"
-        />
+    {props.user && (
+      <div className="user">
+        <div className="avatar">
+          <img src={props.user.images[0].url} alt={props.user.display_name} />
+        </div>
+        <p>
+          Hey, <strong>{props.user.display_name}</strong>!
+        </p>
       </div>
-      <p>
-        Hey, <strong>Yuri Brunetto</strong>!
-      </p>
-    </div>
+    )}
   </HeaderWrapper>
 )
 
