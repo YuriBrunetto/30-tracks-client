@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 
 export const TrackWrapper = styled.a`
-  flex: 0 0 20%;
+  flex: 0 0 calc(100% / 6);
   position: relative;
+
+  @media (max-width: 1300px) {
+    flex-basis: 20%;
+  }
 
   @media (max-width: 959px) {
     flex-basis: 33.33%;
