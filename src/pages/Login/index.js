@@ -18,7 +18,7 @@ const Login = () => (
     </header>
 
     <a
-      href="https://hungry-yalow-d003ef.netlify.com/.netlify/functions/server/login"
+      href="https://tracks-backend.herokuapp.com/login"
       title="Login to Spotify"
       className="login"
     >
