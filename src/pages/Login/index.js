@@ -18,7 +18,7 @@ const Login = () => (
     </header>
 
     <a
-      href="https://tracks-backend.herokuapp.com/login"
+      href="https://thirty-tracks-backend.herokuapp.com/login"
       title="Login to Spotify"
       className="login"
     >
