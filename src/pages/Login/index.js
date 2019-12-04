@@ -18,7 +18,7 @@ const Login = () => (
     </header>
 
     <a
-      href="https://hungry-yalow-d003ef.netlify.com/login"
+      href="https://hungry-yalow-d003ef.netlify.com/.netlify/functions/server/login"
       title="Login to Spotify"
       className="login"
     >
