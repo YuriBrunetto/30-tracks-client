@@ -1,7 +1,9 @@
 {
   "name": "30-albums-frontend",
   "version": "0.1.0",
-  "private": true,
+  "engines": {
+    "node": "10.15.1"
+  },
   "dependencies": {
     "query-string": "^6.9.0",
     "react": "^16.12.0",
