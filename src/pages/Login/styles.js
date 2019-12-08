@@ -48,4 +48,15 @@ export const LoginWrapper = styled.section`
       }
     }
   }
+
+  .github {
+    margin-top: 16px;
+    font-size: 14px;
+    font-style: italic;
+    color: #666;
+
+    a {
+      color: var(--green);
+    }
+  }
 `

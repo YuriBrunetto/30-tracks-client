@@ -24,6 +24,17 @@ const Login = () => (
     >
       Login to Spotify
     </a>
+
+    <div className="github">
+      Source on{' '}
+      <a
+        href="https://github.com/YuriBrunetto/30-tracks-client"
+        title="Source on GitHub"
+        target="_blank"
+      >
+        GitHub
+      </a>
+    </div>
   </LoginWrapper>
 )
 
