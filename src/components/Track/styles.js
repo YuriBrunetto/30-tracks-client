@@ -16,13 +16,10 @@ export const TrackWrapper = styled.a`
     flex-basis: 50%;
   }
 
-  &:nth-child(even):before {
-    background-color: var(--black);
-  }
-
   &:before {
     content: '';
-    background: url(${props => props.image}) no-repeat center var(--green);
+    /* background: url(${props =>
+      props.image}) no-repeat center var(--green); */
     background-size: cover;
     padding-bottom: 100%;
     display: block;
@@ -41,6 +38,14 @@ export const TrackWrapper = styled.a`
     position: absolute;
     left: 0;
     bottom: 0;
+  }
+
+  .track-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
   }
 
   .number {
