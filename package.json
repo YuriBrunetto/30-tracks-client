@@ -2,7 +2,7 @@
   "name": "30-albums-frontend",
   "version": "0.1.0",
   "engines": {
-    "node": "10.15.1"
+    "node": ">=10.15.1"
   },
   "dependencies": {
     "html-to-image": "^0.1.1",

@@ -13,7 +13,7 @@ export const HeaderWrapper = styled.header`
   }
 
   .logo {
-    color: var(--black);
+    color: #fff;
     font-weight: 900;
     font-size: 20px;
 

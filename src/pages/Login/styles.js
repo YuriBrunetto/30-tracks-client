@@ -16,7 +16,7 @@ export const LoginWrapper = styled.section`
     h2 {
       font-weight: normal;
       font-style: italic;
-      font-size: 20px;
+      font-size: 16px;
       margin-top: 2px;
       color: var(--green);
     }
@@ -24,6 +24,8 @@ export const LoginWrapper = styled.section`
     p {
       margin-top: 16px;
       line-height: 150%;
+      color: rgba(255,255,255,.8);
+      padding: 0 16px;
     }
   }
 
@@ -31,8 +33,8 @@ export const LoginWrapper = styled.section`
     background-color: var(--green);
     color: #fff;
     text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 32px;
+    font-weight: bolder;
+    margin-top: 24px;
     padding: 16px 32px;
     letter-spacing: 4px;
     height: 50px;
@@ -50,7 +52,7 @@ export const LoginWrapper = styled.section`
   }
 
   .github {
-    margin-top: 16px;
+    margin-top: 8px;
     font-size: 14px;
     font-style: italic;
     color: #666;

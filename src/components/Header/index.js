@@ -9,6 +9,7 @@ const Header = props => (
     <Link to="/" className="logo" title="30 Tracks">
       30 Tracks
     </Link>
+
     {props.user && (
       <div className="user">
         <div className="avatar">

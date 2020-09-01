@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import queryString from 'query-string'
-import { toJpeg } from 'html-to-image'
 
 // Components
 import Header from '../../components/Header'
@@ -64,17 +63,6 @@ function Tracks() {
     }
   }, [])
 
-  const saveJpeg = () => {
-    toJpeg(document.getElementById('tracks-wrapper'), { quality: 0.95 }).then(
-      dataUrl => {
-        var link = document.createElement('a')
-        link.download = `30-tracks-${new Date().getTime()}`
-        link.href = dataUrl
-        link.click()
-      }
-    )
-  }
-
   return (
     <>
       {loading ? (
@@ -86,20 +74,12 @@ function Tracks() {
           <ContentWrapper>
             <h1>Your monthly top 30 Tracks are</h1>
 
-            <TracksWrapper id="tracks-wrapper">
+            <TracksWrapper className="common-limiter" id="tracks-wrapper">
               {tracks &&
                 tracks.map((track, i) => (
                   <Track key={i} i={i + 1} track={track} />
                 ))}
             </TracksWrapper>
-
-            <button
-              type="button"
-              onClick={() => saveJpeg()}
-              className="save-image"
-            >
-              Save image
-            </button>
           </ContentWrapper>
 
           <Footer />

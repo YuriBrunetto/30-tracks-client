@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   :root {
     --green: #1db954;
-    --black: #191414;
+    --black: #111;
   }
 
   ::selection {
@@ -24,13 +24,13 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 900;
 
     @media (max-width: 959px) {
-      font-size: 32px;
+      font-size: 24px;
     }
   }
 
   body {
-    background-color: #fff;
-    color: var(--black);
+    background-color: var(--black);
+    color: #fff;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
       "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -41,6 +41,15 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+  }
+
+  .common-limiter {
+    max-width: 960px;
+    margin: 0 auto;
+
+    @media (max-width: 1024px) {
+      padding: 0 16px;
+    }
   }
 `
 
